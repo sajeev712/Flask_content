@@ -1,0 +1,11 @@
+body{
+	background: powderblue;
+}
+.container{
+	background: white;
+	width: 50%;
+	margin: 25%;
+	padding: 7%;
+	box-shadow: 2px 2px 2px 2px, red;
+	border-radius: 2%;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>show table</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}"/>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+	<h1><marquee>Student Details</marquee></h1>
+	<table class ="table-c">
+		<tr class="danger">
+			<th>ID</th>
+			<th>Name</th>
+			<th>Surname</th>
+			<th>Rollno</th>
+			<th>Mobile number</th>
+			<th>Branch</th>
+		</tr>
+		{% for r in register %}
+		<tr>
+			<td class="warning">{{r.id}}</td>
+			<td class="info">{{r.name}}</td>
+			<td class="active">{{r.surname}}</td>
+			<td class="success">{{r.roll_no}}</td>
+			<td class="info">{{r.mobile}}</td>
+			<td class="warning">{{r.branch}}</td>
+			<td><a href="{{url_for('editData',register_id=r.id)}}">EDIT</a></td>
+			<td><a href="{{url_for('deleteData',register_id=r.id)}}">DELETE</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	<br><br><br>
+	<a href="{{url_for('addData')}}">ADD</a>
+</div>
+</body>
+</html>
